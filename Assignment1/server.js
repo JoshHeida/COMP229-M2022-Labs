@@ -1,16 +1,20 @@
 "use strict";
-const http = require('http');
-const fs = require('fs');
-const mime = require('mime-types');
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const http_1 = __importDefault(require("http"));
+const fs_1 = __importDefault(require("fs"));
+const mime_types_1 = __importDefault(require("mime-types"));
 const port = 3000;
-let lookup = mime.lookup;
-const server = http.createServer(function (req, res) {
+let lookup = mime_types_1.default.lookup;
+const server = http_1.default.createServer(function (req, res) {
     let path = req.url;
     if (path == "/" || path == "/home") {
         path = "/index.html";
     }
     let mime_type = lookup(path.substring(1));
-    fs.readFile(__dirname + path, function (err, data) {
+    fs_1.default.readFile(__dirname + path, function (err, data) {
         if (err) {
             res.writeHead(404);
             console.log(err.message);
