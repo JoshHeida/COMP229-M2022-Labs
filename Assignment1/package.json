@@ -1,0 +1,14 @@
+{
+  "name": "comp229-m2022-assignment1",
+  "version": "0.0.1",
+  "description": "assignment 1 for comp229 m2022 centennial college",
+  "main": "server.js",
+  "author": "Josh Heida",
+  "license": "MIT",
+  "dependencies": {
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.40"
+  }
+}
